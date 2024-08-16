@@ -8,7 +8,8 @@ import { Suspense } from "react";
 
 const SinglePage = async ({ params }: { params: { slug: string } }) => {
   const wixClient = await wixClientServer();
-
+ console.log(params.slug);
+ 
   const products = await wixClient.products
     .queryProducts()
     .eq("slug", params.slug)
